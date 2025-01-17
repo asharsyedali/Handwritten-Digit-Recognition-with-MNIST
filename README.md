@@ -1,55 +1,67 @@
 # Handwritten Digit Recognition with MNIST
 
-This project is a machine learning application that recognizes handwritten digits (0-9) using a Convolutional Neural Network (CNN) trained on the MNIST dataset. The project also features a real-time web app where users can draw digits and get predictions instantly.
+This project is a machine learning application that uses a **Convolutional Neural Network (CNN)** to recognize handwritten digits (0-9) from the **MNIST dataset**. The project includes both the model training pipeline and an interactive web app, allowing users to draw digits on a canvas and get instant predictions from the trained model.
+
+## Table of Contents
+- [Features](#features)
+- [Technologies](#technologies)
+- [Dataset](#dataset)
+- [Model Architecture](#model-architecture)
+- [Usage](#usage)
+- [Setup Instructions](#setup-instructions)
+- [Contributing](#contributing)
+- [License](#license)
+- [Author](#author)
 
 ## Features
-- **CNN Model**: Built with Keras and trained on the MNIST dataset.
-- **Real-Time Prediction App**: Users can draw digits directly on a web-based canvas to get predictions.
-- **User-Friendly Interface**: Powered by Gradio for ease of use.
+- **Trained CNN Model**: A deep neural network trained on the MNIST dataset to recognize handwritten digits.
+- **Real-Time Prediction**: Users can draw digits directly on the canvas, and the model will predict the digit in real-time.
+- **Confidence Scores**: Displays the model's prediction confidence for each drawn digit.
+- **Interactive Web App**: Built with Gradio to create a simple user interface for real-time predictions.
+- **Model Export**: The trained model can be used in various environments for deployment or further development.
 
-## Project Contents
-- `train_model.py`: Python script to train the CNN model on the MNIST dataset.
-- `app.py`: Python script for the real-time digit recognition web app.
-- `final_model.keras`: Pre-trained Keras model file.
-- `example_images/`: Folder containing sample digit images.
+## Technologies
+- **TensorFlow / Keras**: Framework used to build and train the Convolutional Neural Network.
+- **Gradio**: Library used to create a fast and interactive web app.
+- **NumPy**: For data manipulation and preprocessing.
+- **OpenCV**: For image processing tasks like resizing and normalizing the images.
+- **Matplotlib**: For visualizing training accuracy and loss.
 
-## Installation
-To set up the project locally, follow these steps:
+## Dataset
+The **MNIST dataset** consists of 60,000 28x28 grayscale images of handwritten digits for training and 10,000 images for testing. It is one of the most widely used datasets in machine learning and is commonly used for benchmarking image classification models.
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/asharsyedali/Handwritten-Digit-Recognition-with-MNIST.git
-   cd Handwritten-Digit-Recognition-with-MNIST
-Install dependencies:
+You can download the MNIST dataset directly from [here](http://yann.lecun.com/exdb/mnist/).
 
-bash
-Copy
-Edit
+## Model Architecture
+The CNN model used in this project consists of the following layers:
+- **Convolutional Layer (32 filters, 3x3 kernel, ReLU activation)**: Extracts basic features such as edges and textures.
+- **MaxPooling Layer (2x2 pool size)**: Reduces the spatial dimensions to prevent overfitting and make the model more efficient.
+- **Convolutional Layer (64 filters, 3x3 kernel, ReLU activation)**: Detects more complex patterns.
+- **MaxPooling Layer (2x2 pool size)**: Further reduces spatial dimensions.
+- **Flatten Layer**: Converts the 2D feature maps into a 1D vector.
+- **Dropout Layer (50%)**: Prevents overfitting by randomly dropping half of the neurons during training.
+- **Fully Connected Layer**: 10 output units (one for each digit, 0-9) with softmax activation for classification.
+
+## Usage
+### Real-Time Web App:
+The project includes an interactive web app built using **Gradio**, where users can draw a digit and get predictions. The app will show the predicted digit along with a confidence score.
+
+### Steps:
+1. Draw a digit (0-9) in the canvas.
+2. The app will predict the digit and show the confidence score.
+3. You can experiment with different drawings, and the model will provide updated predictions in real-time.
+
+## Setup Instructions
+### Prerequisites:
+Make sure you have Python 3.x and the following libraries installed:
+
+- **TensorFlow** (for model training)
+- **Gradio** (for the interactive web app)
+- **NumPy** (for data handling)
+- **OpenCV** (for image processing)
+- **Matplotlib** (for plotting training results)
+
+To install the required libraries, run:
+
+```bash
 pip install -r requirements.txt
-Run the real-time app:
-
-bash
-Copy
-Edit
-python app.py
-The app will launch, and you’ll get a link to access it.
-
-Usage
-Draw a digit (0-9) on the canvas provided in the app.
-The model will predict the digit and display the confidence score.
-Dataset
-The MNIST dataset contains 60,000 training images and 10,000 test images of handwritten digits, each of size 28x28 pixels.
-
-Model Architecture
-The CNN consists of:
-
-Two convolutional layers with ReLU activation.
-Two max-pooling layers.
-Dropout for regularization.
-Fully connected layer with softmax for output.
-Example
-Here’s an example prediction from the app:
-
-
-Author
-This project was created by Syed Ali Ashar as part of UMT coursework. Feel free to contribute or use this project for educational purposes.
