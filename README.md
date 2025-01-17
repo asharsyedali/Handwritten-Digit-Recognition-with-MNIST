@@ -67,34 +67,6 @@ Make sure you have Python 3.x and the following libraries installed:
 
 ```bash
 pip install -r requirements.txt
-Training the Model:
-Clone the repository:
-
-bash
-Copy
-Edit
-git clone https://github.com/<your-username>/Handwritten-Digit-Recognition-with-MNIST.git
-cd Handwritten-Digit-Recognition-with-MNIST
-Train the model:
-
-bash
-Copy
-Edit
-python train_model.py
-This will train the CNN model on the MNIST dataset and generate a final_model.keras file.
-
-Running the Real-Time App:
-To launch the real-time app, run:
-
-bash
-Copy
-Edit
-python app.py
-Gradio will provide a URL (e.g., https://<app-id>.gradio.app) that you can open in your browser to start drawing and predicting digits.
-
-💻 Example Predictions
-Here are some example predictions from the real-time app:
-
 
 🌟 Contributing
 Feel free to fork this repository and contribute! You can help by:
@@ -103,8 +75,7 @@ Improving the model's performance.
 Adding additional features (e.g., support for custom datasets).
 Fixing bugs or enhancing code performance.
 Writing better documentation or adding more examples.
-📜 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+
 
 👨‍💻 Author
 This project was created by Syed Ali Ashar, as part of the University of Management and Technology (UMT) coursework.
